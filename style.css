@@ -1,0 +1,147 @@
+/* .container-fluid{
+    background-color: red;
+}
+.container{
+    background-color: black;
+} */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#main-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: 100vh;
+    z-index: -1; /* Make sure the video stays behind the content */
+    object-fit: cover; /* Make the video cover the entire container */
+}
+
+h1 {
+    position: relative; /* Ensure the content stays above the video */
+    z-index: 1;
+}
+
+/* Ensure your other content is above the video */
+#nav-container {
+    position: relative;
+    z-index: 1;
+    margin-top: 40px;
+}
+
+.icons-imgs{
+    width: 30px;
+}
+.right img{
+    width: 50px;
+}
+
+
+
+/* Set both left and right containers to 50% height of the viewport */
+#left-container, #right-container {
+   height: 80vh;
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    padding: 10px; /* Optional padding */
+    box-sizing: border-box;
+    
+   
+}
+
+/* Ensure the image and content inside the right container take full width */
+#right-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Style for items inside the left container */
+.recipe-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Prevent the body from overflowing */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  
+}
+
+
+#right-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align content to start at the top */
+    padding-top:10px; /* Adjust this value based on your navbar height */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    position: relative;
+}
+
+/* Add some padding or margin to the recipe details */
+.recipe-details {
+    width: 100%;
+    max-width: 700px; /* Optional: restrict max width for better readability */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align to the top */
+    align-items: center;
+    padding: 20px; /* Ensure some padding */
+    position: relative;
+    z-index: 1;
+    text-align: center; /* Center align text inside */
+}
+
+/* Ensure the image stays within the container */
+.recipe-details img {
+    width: 100%;   /* Set width to 100% to take up full width */
+    max-width: 500px; /* Optional: limit max width for responsiveness */
+    height: auto;   
+    object-fit: cover;
+}
+
+#bookmark-list {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position below the button */
+    right: 0; /* Align to the right edge of the button */
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 200px;
+}
+
+
+/* Ensure the bookmark button is positioned relatively */
+#bookmark-btn {
+    position: relative;
+}
+
+#bookmark-btn:hover #bookmark-list {
+    display: block; /* Show the list when hovering over the button */
+}
+
+.bookmark-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
